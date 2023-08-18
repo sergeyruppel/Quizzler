@@ -26,6 +26,7 @@ final class ViewController: UIViewController {
                   Question(q: "The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.", a: "False"),
                   Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: "False"),
                   Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")]
+    
     var questionNumber = 0
 
     override func viewDidLoad() {
@@ -35,13 +36,13 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        
+                
         let actualAnswer = quiz[questionNumber].answer
 
         if sender.currentTitle == actualAnswer {
-            print("true")
+            sender.backgroundColor = .green
         } else {
-            print("false")
+            sender.backgroundColor = .red
         }
         
         if questionNumber < (quiz.count - 1) {
@@ -49,7 +50,8 @@ final class ViewController: UIViewController {
         } else {
             questionNumber = 0
         }
-        updateUI()
+        
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
     private func setupUI() {
@@ -61,7 +63,10 @@ final class ViewController: UIViewController {
         falseButton.layer.borderColor = UIColor.systemIndigo.cgColor
     }
     
-    private func updateUI() {
+    @objc private func updateUI() {
         questionLabel.text = quiz[questionNumber].text
+        trueButton.backgroundColor = .clear
+        falseButton.backgroundColor = .clear
+        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
     }
 }
