@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A249DF52A8DE8C0001F6762 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A249DF42A8DE8C0001F6762 /* Question.swift */; };
 		3A6BBD162A85413800306BB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6BBD152A85413800306BB8 /* AppDelegate.swift */; };
 		3A6BBD182A85413800306BB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6BBD172A85413800306BB8 /* SceneDelegate.swift */; };
 		3A6BBD1A2A85413800306BB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6BBD192A85413800306BB8 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A249DF42A8DE8C0001F6762 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3A6BBD122A85413800306BB8 /* Quizzler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6BBD152A85413800306BB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A6BBD172A85413800306BB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				3A6BBD152A85413800306BB8 /* AppDelegate.swift */,
 				3A6BBD172A85413800306BB8 /* SceneDelegate.swift */,
 				3A6BBD192A85413800306BB8 /* ViewController.swift */,
+				3A249DF42A8DE8C0001F6762 /* Question.swift */,
 				3A6BBD1B2A85413800306BB8 /* Main.storyboard */,
 				3A6BBD1E2A85413800306BB8 /* Assets.xcassets */,
 				3A6BBD202A85413800306BB8 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6BBD1A2A85413800306BB8 /* ViewController.swift in Sources */,
+				3A249DF52A8DE8C0001F6762 /* Question.swift in Sources */,
 				3A6BBD162A85413800306BB8 /* AppDelegate.swift in Sources */,
 				3A6BBD182A85413800306BB8 /* SceneDelegate.swift in Sources */,
 			);
@@ -216,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
