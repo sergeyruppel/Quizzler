@@ -24,24 +24,11 @@ final class ViewController: UIViewController {
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
                 
-        let actualAnswer = quiz[questionNumber].answer
+        let userGotItRight = quizLogic.checkAnswer(sender.currentTitle!)
         
-        if let userAnswer = sender.currentTitle {
-            quizLogic.checkAnswer(userAnswer)
-            
-        }
-
-        if sender.currentTitle == actualAnswer {
-            sender.backgroundColor = .green
-        } else {
-            sender.backgroundColor = .red
-        }
+        sender.backgroundColor = userGotItRight ? .green : .red
         
-        if questionNumber < (quiz.count - 1) {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
+        quizLogic.nextQuestion()
         
         Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
@@ -56,9 +43,9 @@ final class ViewController: UIViewController {
     }
     
     @objc private func updateUI() {
-        questionLabel.text = quiz[questionNumber].text
+        questionLabel.text = quizLogic.getQuestionText()
+        progressBar.progress = quizLogic.getProgress()
         trueButton.backgroundColor = .clear
         falseButton.backgroundColor = .clear
-        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
     }
 }
