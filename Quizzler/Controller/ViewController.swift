@@ -55,7 +55,7 @@ final class ViewController: UIViewController {
         falseButton.backgroundColor = .clear
     }
     
-    func setupUIButton(_ button: UIButton) {
+    private func setupUIButton(_ button: UIButton) {
         button.layer.cornerRadius = button.frame.width * 0.05
         button.layer.borderWidth = 3.0
         button.layer.borderColor = UIColor.systemIndigo.cgColor
