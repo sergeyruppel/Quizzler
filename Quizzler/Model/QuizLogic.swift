@@ -8,6 +8,9 @@
 import Foundation
 
 struct QuizLogic {
+    
+    // MARK: - Properties
+    
     let quiz = [Question(q: "A slug's blood is green.", a: "True"),
                 Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
                 Question(q: "The total surface area of two human lungs is approximately 70 square metres.", a: "True"),
@@ -21,11 +24,14 @@ struct QuizLogic {
                 Question(q: "No piece of square dry paper can be folded in half more than 7 times.", a: "False"),
                 Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")]
     
-    
     var questionNumber = 0
+    var score = 0
     
-    func checkAnswer(_ userAnswer: String) -> Bool {
+    // MARK: - Methods
+    
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
+            score += 1
             return true
         } else {
             return false
@@ -45,6 +51,7 @@ struct QuizLogic {
             questionNumber += 1
         } else {
             questionNumber = 0
+            score = 0
         }
     }
 }
